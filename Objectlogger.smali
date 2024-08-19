@@ -1,4 +1,4 @@
-.class public Lmt/Objectlogger;
+.class public LRK_TECHNO_INDIA/Objectlogger;
 .super Ljava/lang/Thread;
 # static fields
 .field private static final PARAMETER_BUFFER:Ljava/lang/ThreadLocal;
@@ -11,22 +11,22 @@
     new-instance v0, Ljava/text/SimpleDateFormat;
     const-string v1, "HH:mm:ss.SSS"
     invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-    sput-object v0, Lmt/Objectlogger;->TIME_FORMAT1:Ljava/text/SimpleDateFormat;
+    sput-object v0, LRK_TECHNO_INDIA/Objectlogger;->TIME_FORMAT1:Ljava/text/SimpleDateFormat;
     new-instance v0, Ljava/text/SimpleDateFormat;
     const-string v1, "yyyyMMddHHmmssSSS"
     invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-    sput-object v0, Lmt/Objectlogger;->TIME_FORMAT2:Ljava/text/SimpleDateFormat;
+    sput-object v0, LRK_TECHNO_INDIA/Objectlogger;->TIME_FORMAT2:Ljava/text/SimpleDateFormat;
     new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
     invoke-direct {v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
-    sput-object v0, Lmt/Objectlogger;->QUEUE:Ljava/util/concurrent/LinkedBlockingQueue;
+    sput-object v0, LRK_TECHNO_INDIA/Objectlogger;->QUEUE:Ljava/util/concurrent/LinkedBlockingQueue;
     new-instance v0, Ljava/lang/ThreadLocal;
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
-    sput-object v0, Lmt/Objectlogger;->PARAMETER_BUFFER:Ljava/lang/ThreadLocal;
-    new-instance v0, Lmt/Objectlogger;
-    invoke-direct {v0}, Lmt/Objectlogger;-><init>()V
+    sput-object v0, LRK_TECHNO_INDIA/Objectlogger;->PARAMETER_BUFFER:Ljava/lang/ThreadLocal;
+    new-instance v0, LRK_TECHNO_INDIA/Objectlogger;
+    invoke-direct {v0}, LRK_TECHNO_INDIA/Objectlogger;-><init>()V
     const/4 v1, 0x1
-    invoke-virtual {v0, v1}, Lmt/Objectlogger;->setDaemon(Z)V
-    invoke-virtual {v0}, Lmt/Objectlogger;->start()V
+    invoke-virtual {v0, v1}, LRK_TECHNO_INDIA/Objectlogger;->setDaemon(Z)V
+    invoke-virtual {v0}, LRK_TECHNO_INDIA/Objectlogger;->start()V
     return-void
 .end method
 .method public constructor <init>()V
@@ -36,11 +36,11 @@
 .end method
 .method public static logstring(Ljava/lang/Object;)V
     .registers 9
-    invoke-static {p0}, Lmt/Objectlogger;->y(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, LRK_TECHNO_INDIA/Objectlogger;->y(Ljava/lang/Object;)Ljava/lang/String;
     move-result-object v0
-    invoke-static {v0}, Lmt/Objectlogger;->EscapeStrings(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, LRK_TECHNO_INDIA/Objectlogger;->EscapeStrings(Ljava/lang/String;)Ljava/lang/String;
     move-result-object v0
-    invoke-static {v0}, Lmt/Objectlogger;->z(Ljava/lang/String;)V
+    invoke-static {v0}, LRK_TECHNO_INDIA/Objectlogger;->z(Ljava/lang/String;)V
     return-void
 .end method
 .method public static EscapeStrings(Ljava/lang/String;)Ljava/lang/String;
@@ -171,7 +171,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
     move-result v2
     if-eqz v2, :cond_1c
-    sget-object v2, Lmt/Objectlogger;->TIME_FORMAT1:Ljava/text/SimpleDateFormat;
+    sget-object v2, LRK_TECHNO_INDIA/Objectlogger;->TIME_FORMAT1:Ljava/text/SimpleDateFormat;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
     move-result-wide v3
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -220,7 +220,7 @@
     const-string v5, "[LOCATION]"
     invoke-virtual {v4, v5, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
     move-result-object v0
-    sget-object v4, Lmt/Objectlogger;->QUEUE:Ljava/util/concurrent/LinkedBlockingQueue;
+    sget-object v4, LRK_TECHNO_INDIA/Objectlogger;->QUEUE:Ljava/util/concurrent/LinkedBlockingQueue;
     invoke-virtual {v4, v0}, Ljava/util/concurrent/LinkedBlockingQueue;->offer(Ljava/lang/Object;)Z
     return-void
 .end method
@@ -240,7 +240,7 @@
     const-string v3, "package.name"
     invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
     move-result-object v1
-    sget-object v2, Lmt/Objectlogger;->TIME_FORMAT2:Ljava/text/SimpleDateFormat;
+    sget-object v2, LRK_TECHNO_INDIA/Objectlogger;->TIME_FORMAT2:Ljava/text/SimpleDateFormat;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
     move-result-wide v3
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -287,7 +287,7 @@
     new-instance v4, Ljava/io/File;
     new-instance v5, Ljava/lang/StringBuilder;
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-    sget-object v6, Lmt/Objectlogger;->TIME_FORMAT2:Ljava/text/SimpleDateFormat;
+    sget-object v6, LRK_TECHNO_INDIA/Objectlogger;->TIME_FORMAT2:Ljava/text/SimpleDateFormat;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
     move-result-wide v7
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -314,7 +314,7 @@
     invoke-static {}, Ljava/nio/charset/Charset;->defaultCharset()Ljava/nio/charset/Charset;
     move-result-object v3
     :goto_94
-    sget-object v4, Lmt/Objectlogger;->QUEUE:Ljava/util/concurrent/LinkedBlockingQueue;
+    sget-object v4, LRK_TECHNO_INDIA/Objectlogger;->QUEUE:Ljava/util/concurrent/LinkedBlockingQueue;
     invoke-virtual {v4}, Ljava/util/concurrent/LinkedBlockingQueue;->take()Ljava/lang/Object;
     move-result-object v5
     check-cast v5, Ljava/lang/String;
