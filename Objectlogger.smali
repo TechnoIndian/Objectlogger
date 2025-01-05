@@ -287,6 +287,8 @@
     new-instance v4, Ljava/io/File;
     new-instance v5, Ljava/lang/StringBuilder;
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v6, "PACKAGENAME-"
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     sget-object v6, LRK_TECHNO_INDIA/ObjectLogger;->TIME_FORMAT2:Ljava/text/SimpleDateFormat;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
     move-result-wide v7
